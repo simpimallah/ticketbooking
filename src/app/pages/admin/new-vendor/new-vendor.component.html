@@ -1,0 +1,66 @@
+<div class="col-md-12">
+  <div class="d-flex mb-2">
+    <div class="d-flex justify-content-start">
+      <h5 class="mb-0 headers">New Vendor</h5>
+    </div>
+    <div class="buttonBox ms-auto">
+      <button type="submit" class="btn-primary formButton mr-2" (click)="OnListVendor()"
+      title="Shortcut Key :- Alt + a"><i class="fa fa-file-text mr-2" aria-hidden="true"></i> List</button>
+      <button type="submit" class="btn-primary formButton mr-2" (click)="OnSaveVendor()"
+        title="Shortcut Key :- Alt + a"><i class="fa fa-file-text mr-2" aria-hidden="true"></i> Save</button>
+      <button type="submit" class="btn-primary formButton mr-2" (click)="resetVendor()"
+        title="Shortcut Key :- Alt + a"><i class="fa fa-recycle mr-2" aria-hidden="true"></i> Reset</button>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid ">
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-12 col-md-4 col-lg-4">
+          <div class="mb-2">
+            <label>Vendor Name</label>
+            <div>
+              <input type="text" class="form-control" [(ngModel)]="vendorsObj.vendorName" placeholder="Enter Airport Code..">
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4">
+          <div class="mb-2">
+            <label>Email Id</label>
+            <div>
+              <input type="text" class="form-control"[(ngModel)]="vendorsObj.emailId"  placeholder="Select Airport Name.">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4 col-lg-4">
+          <div class="mb-2">
+            <label>Customer Care No</label>
+            <div>
+              <input type="text" class="form-control" [(ngModel)]="vendorsObj.customerCareNo" placeholder="Enter City Name">
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4">
+          <div class="mb-2">
+            <label>head Office</label>
+            <div>
+              <input type="text" class="form-control" [(ngModel)]="vendorsObj.headoffice" placeholder="Enter City Name">
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4">
+          <div class="mb-2">
+            <label>Vendor LogoUrle</label>
+            <div>
+              <input type="text" class="form-control" [(ngModel)]="vendorsObj.vendorLogoUrl" placeholder="Enter City Name">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

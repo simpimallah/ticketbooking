@@ -1,0 +1,56 @@
+<div class="col-md-12">
+  <div class="d-flex mb-2">
+      <div class="d-flex justify-content-start">
+          <h5 class="mb-0 headers">All Flights</h5>
+      </div>
+      <div class="buttonBox ms-auto">
+        <button type="submit" class="btn-primary formButton mr-2" (click)="addNew()"  title="Shortcut Key :- Alt + a"><i
+          class="fa fa-plus mr-2" aria-hidden="true"></i> Add</button>
+          <button type="submit" class="btn-primary formButton mr-2" (click)="bulkUpdateAllFlight()"  title="Shortcut Key :- Alt + a"><i class="fa fa-pencil-square" aria-hidden="true"></i> Bulk Update</button>
+      </div>
+  </div>
+</div>
+
+<div class="container-fluid ">
+  <div class="">
+      <div class="">
+          <div class="row">
+            <div class="col-sm-12">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>SrNo</th>
+                    <th>Airline</th>
+                    <th>Flight No</th>
+                    <th>Arrival Airport</th>
+                    <th>Departure Airport</th>
+                    <th>Travel Date</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of flightList; let i=index;">
+                    <td>{{i + 1}}</td>
+                    <td>{{item.vendorName}}
+                      <img src="{{item.vendorLogoUrl}}" alt="img" width="25px" height="25px">
+                    </td>
+                    <td>{{item.flightNumber}}</td>
+                    <td>{{item.arrivalAirportName}}</td>
+                    <td>{{item.departureAirportName}}</td>
+                    <td>{{item.travelDate | date:'dd-MM-yyyy'}}</td>
+                    <td>{{item.price}}</td>
+                    <td>
+                      <div class="d-flex">
+                       <a href="#" class="m-1"><i class="fa fa-trash"></i></a>
+                       <a href="#" class="m-1" ><i class="fa fa-pencil-square"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          </div>
+          </div>
+          </div>

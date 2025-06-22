@@ -1,0 +1,149 @@
+<div class="container mt-5">
+  <div class="row">
+    <!-- Left Search Box -->
+    <div class="col-md-4">
+      <div class="bg-dark text-white p-4 rounded">
+        <div class="form-check form-check-inline mb-3">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+          <label class="form-check-label" for="inlineRadio1">One Way</label>
+        </div>
+        <!-- <div class="form-check form-check-inline mb-3" id="#returnDate">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <label class="form-check-label" for="inlineRadio1">Roundtrip</label>
+        </div> -->
+        <form>
+          <div class="mb-3">
+            <select class="form-select" name="fromAirport" [(ngModel)]="fromAirport">
+              <option  value="">Select Airport</option>
+              <option *ngFor="let item of airports;" [value]="item.airportId">{{item.airportName}}, {{item.cityName}}</option>
+
+            </select>
+
+          </div>
+          <div class="mb-3">
+            <select class="form-select" name="toAirport" [(ngModel)]="toAirport">
+              <option  value="">Select Airport</option>
+              <option *ngFor="let item of airports;" [value]="item.airportId">{{item.airportName}}, {{item.cityName}}</option>
+
+            </select>
+
+          </div>
+          <div class="mb-3" id="depatureDate">
+            <input type="date" class="form-control" name="travelDate" [(ngModel)]="travelDate" placeholder="Travel Date" />
+          </div>
+          <!-- <div class="mb-3" id="returnDate">
+            <input type="date" class="form-control" id="dateofRetrun" name="dateofRetrun" [(ngModel)]="returnDate" placeholder="Return Date" />
+          </div> -->
+
+          <div class="mb-3">
+            <input type="text" class="form-control" id="noOfTravelers" placeholder="Number of Travelers" />
+
+          </div>
+          <button class="btn btn-danger w-100" (click)="searchFlights()">Search</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Right Results -->
+    <div class="col-md-8" *ngIf="isHideShowFlightDetails">
+      <div class="bg-light p-3 rounded">
+        <div class="d-flex justify-content-between align-items-center mb-3" >
+          <div>
+            <h5>{{arrivalAirportName}} ({{arrivalAirportCode}})</h5>
+            <p class="mb-0">{{arrivalTime}}</p>
+          </div>
+          <div><span class="fs-4">→</span></div>
+          <div>
+            <h5>{{departureAirportName}} ({{departureAirportCode}})</h5>
+            <p class="mb-0">{{departureTime}}</p>
+          </div>
+        </div>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Airline</th>
+              <th>Flight Number</th>
+              <th>Arrival</th>
+              <th>Departure</th>
+              <th>Fare</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let flight of flightList; let i= index;">
+              <td>
+                <img [src]="flight.vendorLogoUrl" alt="Flight" width="24" class="me-2" />
+                {{flight.vendorName}}
+
+              </td>
+              <td>{{flight.flightNumber}}</td>
+              <td>{{flight.arrivalTime}}</td>
+              <td>{{flight.departureTime}}</td>
+              <td>{{flight.price}}</td>
+              <td>
+                <button class="btn btn-primary" (click)="showDialogBookTicket(flight.flightId)">Book Now</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- The Modal BookTicket -->
+<div *ngIf="isHideShowDialogBox"></div>
+<p-dialog header="Book Ticket" [(visible)]="visibleBookTicket" [style]="{ width: '50rem' }">
+  <div class="row mb-3">
+    <div class="col-3">
+      <label>Fullname</label>
+      <input type="text"  [(ngModel)]="passengerObj.travelerName" class="form-control">
+    </div>
+    <div class="col-3">
+      <label>Contact No.</label>
+      <input type="text"   [(ngModel)]="passengerObj.contactNo" class="form-control">
+    </div>
+    <div class="col-3">
+      <label>Aadhar Card</label>
+      <input type="text"  [(ngModel)]="passengerObj.aadharNo" class="form-control">
+    </div>
+    <div class="col-2">
+      <label>Seat No</label>
+      <input type="text"   [(ngModel)]="passengerObj.seatNo" class="form-control">
+    </div>
+    <div class="col-1">
+      <button class="btn btn-danger mt-4" (click)="addPassenger()">Add</button>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="isHideShowBookTicket">
+    <div class="col-12">
+      <table class="table table-striped">
+       <thead>
+        <tr>
+          <th>SrNo</th>
+          <th>Fullname</th>
+          <th>Contact No</th>
+          <th>Aadhar Card</th>
+          <th>Seat No</th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr *ngFor="let item of passengerList; let i = index;">
+          <td>{{i + 1}}</td>
+          <td>{{item.travelerName}}</td>
+          <td>{{item.contactNo}}</td>
+          <td>{{item.aadharNo}}</td>
+          <td>{{item.seatNo}}</td>
+        </tr>
+       </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="d-flex me-auto" *ngIf="isHideShowBookTicket">
+    <button class="btn btn-danger w-10 text-white m-2" type="submit" (click)="onBookTicket()">
+      Book Ticket
+    </button>
+  </div>
+</p-dialog>

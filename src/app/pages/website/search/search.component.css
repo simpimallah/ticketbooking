@@ -1,0 +1,13 @@
+.form-container {
+  position: relative;
+  margin-top: 4rem;
+}
+
+.form-container .bg-white {
+  position: absolute;
+  top: -2px;
+  left: -11px;
+}
+.bg-dark{
+  background-color: #1a245e !important;
+}

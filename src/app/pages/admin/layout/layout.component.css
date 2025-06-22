@@ -1,0 +1,59 @@
+.offcanvas, .offcanvas-lg, .offcanvas-md, .offcanvas-sm, .offcanvas-xl, .offcanvas-xxl {
+  --bs-offcanvas-width: 250px !important;
+  --bs-offcanvas-color:#fff !important;
+  --bs-offcanvas-bg: #1a245e !important;
+}
+
+#wrapper {
+  transition: margin-left 0.3s ease;
+  margin-left: 0px;
+}
+/* Toggled state */
+#wrapper.toggled {
+  margin-left: 240px;
+}
+
+/* Default state */
+#page-content-wrapper {
+  transition: margin-left 0.3s ease;
+  margin-left: 0px;
+}
+
+/* Toggled state */
+#page-content-wrapper.toggled {
+  margin-left: 240px;
+}
+/* Sidebar styles */
+.sidebar-nav {
+  padding-left: 0;
+  list-style: none;
+}
+
+.sidebar-nav .nav-link {
+  padding: 12px 20px;
+  color: #fff;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.sidebar-nav .nav-link:hover,
+.sidebar-nav .nav-link.active {
+  background-color: #dc3545 !important;
+  color: #ffffff !important;
+}
+
+.sidebar-nav .nav-link i {
+  margin-right: 8px;
+}
+
+.nav-item .nav-link .fa-bell, .fa-solid{
+color: #dc3545 !important;
+font-size: 20px;
+
+}
+.sidebar-nav .nav-link img{
+  color: #fff !important;
+}

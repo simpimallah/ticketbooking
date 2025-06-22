@@ -1,0 +1,41 @@
+<div class="col-md-12">
+  <div class="d-flex mb-2">
+      <div class="d-flex justify-content-start">
+          <h5 class="mb-0 headers">City</h5>
+      </div>
+      <div class="buttonBox ms-auto">
+        <button type="submit" class="btn-primary formButton mr-2" (click)="addNew()"  title="Shortcut Key :- Alt + a"><i
+          class="fa fa-plus mr-2" aria-hidden="true"></i> Add</button>
+          <button type="submit" class="btn-primary formButton mr-2" (click)="bulkUpdateCity()"  title="Shortcut Key :- Alt + a">
+            <i class="fa fa-pencil-square" aria-hidden="true"></i> Bulk Update</button>
+      </div>
+  </div>
+</div>
+
+<div class="container-fluid ">
+  <div class="">
+      <div class="">
+          <div class="row">
+              <div class="col-sm-3">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>SrNo</th>
+                      <th>City Name</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr *ngFor="let city of cityList; let i=index">
+                      <td>{{i+1}}</td>
+                      <td>
+                        <input type="text" placeholder="Enter City Name" [(ngModel)]="city.cityName"/>
+                        </td>
+                    </tr>
+                  </tbody>
+                </table>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>

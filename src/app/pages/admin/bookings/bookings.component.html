@@ -1,0 +1,68 @@
+<div class="col-md-12">
+  <div class="d-flex mb-2">
+    <div class="d-flex justify-content-start">
+      <h5 class="mb-0 headers">All Booking</h5>
+    </div>
+    <div class="buttonBox ms-auto">
+      <!-- <button type="submit" class="btn-primary formButton mr-2"
+        title="Shortcut Key :- Alt + a"><i class="fa fa-plus mr-2" aria-hidden="true"></i>Create Flight</button>
+      <button type="submit" class="btn-primary formButton mr-2"
+        title="Shortcut Key :- Alt + a"><i class="fa fa-plus mr-2" aria-hidden="true"></i>Reset</button> -->
+    </div>
+  </div>
+</div>
+<div class="container-fluid ">
+  <div class="">
+      <div class="">
+          <div class="row">
+            <div class="col-sm-12">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>SrNo</th>
+                    <th>Booking Id</th>
+                    <th>Booking Code</th>
+                    <th>Airline</th>
+                    <th>Customer Name</th>
+                    <th>Email</th>
+
+                    <th>Flight No</th>
+                    <th>Arrival Airport</th>
+                    <th>Departure Airport</th>
+                    <th>Travel Date</th>
+                    <th>Price</th>
+                    <th>Total Seats</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of flightBookingList; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{item.bookingId}}</td>
+                    <td>{{item.bookingCode}}</td>
+                    <td>{{item.vendorName}}
+                      <img src="{{item.vendorLogoUrl}}" alt="" width="25px" height="25px">
+                    </td>
+                    <td>{{item.customerName}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.flightNumber}}</td>
+
+                    <td>{{item.arrivalAirportName}},{{item.arrivalAirportCode}}</td>
+                    <td>{{item.departureAirportName}},{{item.departureAirportCode}}</td>
+                    <td>{{item.travelDate | date:'dd-MM-yyyy'}}</td>
+                    <td>{{item.price}}</td>
+                    <td>{{item.totalSeats}}</td>
+                    <td>
+                      <div class="d-flex">
+                       <a href="#" class="m-1"><i class="fa fa-trash"></i></a>
+                       <a href="#" class="m-1" routerLink="" (click)="viewDatails()"><i class="fa fa-eye"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          </div>
+          </div>
+          </div>

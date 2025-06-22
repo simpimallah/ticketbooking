@@ -1,0 +1,89 @@
+<div class="col-md-12">
+  <div class="d-flex mb-2">
+    <div class="d-flex justify-content-start">
+      <h5 class="mb-0 headers">Flight Booking Details</h5>
+    </div>
+    <div class="buttonBox ms-auto">
+      <div *ngIf="errorMessage" class="alert alert-danger">
+        {{ errorMessage }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid ">
+  <div class="row">
+    <div class="col-sm-8">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Booking ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Flight Number</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Booking Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let booking of bookings;let i=index">
+            <td>{{ booking.bookingId }}</td>
+            <td>{{ booking.userName }}</td>
+            <td>{{ booking.email }}</td>
+            <td>{{ booking.flightNumber }}</td>
+            <td>{{ booking.fromCity }}</td>
+            <td>{{ booking.toCity }}</td>
+            <td>{{ booking.bookingDate | date }}</td>
+          </tr>
+        </tbody>
+        </table>
+        </div>
+        <div class="col-sm-4">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Traveler Name</th>
+                <th>Seat No</th>
+                <th>Contact</th>
+                <th>Aadhar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let traveler of travelers">
+                <td>{{ traveler.travelerName }}</td>
+                <td>{{ traveler.seatNo }}</td>
+                <td>{{ traveler.contactNo }}</td>
+                <td>{{ traveler.aadharNo }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Traveler Name</th>
+                  <th>Seat No</th>
+                  <th>Aadhar No</th>
+                  <th>Booking Code</th>
+                  <th>Booking Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let passenger of passengers">
+                  <td>{{ passenger.travelerName }}</td>
+                  <td>{{ passenger.seatNo }}</td>
+                  <td>{{ passenger.aadharNo }}</td>
+                  <td>{{ passenger.bookingCode }}</td>
+                  <td>{{ passenger.bookingDate | date }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+</div>
+

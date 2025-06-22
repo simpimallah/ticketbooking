@@ -1,0 +1,81 @@
+<div id="wrapper" [ngClass]="{ 'toggled': isSidebarOpen }">
+  <!-- Navbar -->
+  <div class="container-fluid p-0" >
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm px-3">
+      <div class="container-fluid">
+        <!-- Sidebar Toggle -->
+        <button class="btn btn-primary me-3" id="menu-toggle" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" (click)="toggleSidebar()">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <!-- Navbar Toggler for Mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ftco-nav"
+          aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Menu -->
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link">{{loggedUserData?.email}}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa fa-bell"></i></a>
+            </li>
+            <li class="nav-item" (click)="logOff()">
+              <a class="nav-link" href="#"><i class="fa-solid fa-right-from-bracket"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+  <!-- Sidebar Offcanvas -->
+  <div id="sidebar-wrapper">
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+      id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+      <div class="offcanvas-header border-bottom">
+        <img src="img/logo2.webp" alt="logo" width="40" height="40" />
+        <h5 class="offcanvas-title ms-2" id="offcanvasScrollingLabel">Flight Booking</h5>
+        <!-- <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
+      </div>
+      <div class="offcanvas-body px-0">
+        <ul class="nav flex-column sidebar-nav">
+          <li class="nav-item" routerLink="/dashboard">
+            <a class="nav-link"><i class="fa fa-tachometer-alt me-2"></i> Dashboard</a>
+          </li>
+          <li class="nav-item" routerLink="/airport">
+            <a class="nav-link"><i class="fa fa-plane me-2"></i> Airport</a>
+          </li>
+          <li class="nav-item" routerLink="/city">
+            <a class="nav-link"><i class="fa fa-building me-2"></i> City</a>
+          </li>
+          <li class="nav-item" routerLink="/all-bookings">
+            <a class="nav-link"><i class="fa fa-book me-2"></i>  Bookings</a>
+          </li>
+          <li class="nav-item" routerLink="/all-flight">
+            <a class="nav-link"><i class="fa fa-ticket me-2"></i>  Flights</a>
+          </li>
+          <li class="nav-item" routerLink="/all-vendors">
+            <a class="nav-link"><i class="fa fa-industry" aria-hidden="true"></i> Vendors</a>
+          </li>
+
+        </ul>
+      </div>
+      <!-- <form class="d-flex">
+        <label >{{loggedUserData?.email}}</label>
+        <button class="btn btn-primary" type="button" (click)="logOff()">Log-off</button>
+      </form> -->
+    </div>
+</div>
+
+  <!-- Main Content Area -->
+  <div id="page-content-wrapper" class="p-4" [ngClass]="{ 'toggled': isSidebarOpen }">
+    <router-outlet></router-outlet>
+  </div>
+
+
+

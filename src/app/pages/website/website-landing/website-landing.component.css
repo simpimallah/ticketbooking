@@ -1,0 +1,22 @@
+
+
+.bg-body-tertiary{
+  background-color: #1a245e !important;
+
+}
+.navbar-brand {
+  color: #fff !important;
+}
+
+
+.navbar-nav .nav-link.active{
+  color: #dc3545 !important;
+  font-weight: 700;
+}
+.nav-link{
+  color: #fff ;
+  font-weight: 700;
+}
+.nav-link:hover{
+  color: #dc3545;
+}

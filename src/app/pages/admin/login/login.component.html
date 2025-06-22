@@ -1,0 +1,42 @@
+<div class="d-flex vh-100">
+  <!-- Left Image Panel -->
+  <div class="col-md-6 d-none d-md-block p-0">
+    <img
+      src="img/airplane-takeoff-getty.jpg"
+      class="img-fluid h-100 w-100"
+      style="object-fit: cover"
+      alt="Kitchen"
+    />
+  </div>
+
+  <!-- Right Login Panel -->
+  <div class="col-md-6 d-flex align-items-center justify-content-center bg-light">
+    <div class="card shadow p-5" style="width: 100%; max-width: 400px;">
+      <h4 class="text-center mb-4">Login to <strong><img src="img/logo2.webp" alt="logo" width="40px" height="40px"></strong></h4>
+
+      <form>
+        <div class="mb-3">
+          <label class="form-label">Username</label>
+          <input type="email" class="form-control" [(ngModel)]="EMAIL_ID" placeholder="test23email@gmail.com"  [ngModelOptions]="{standalone: true}"/>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" [(ngModel)]="PASSWORD" placeholder="Your Password"  [ngModelOptions]="{standalone: true}"/>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="remember" checked />
+            <label class="form-check-label text-secondary" for="remember">Remember me</label>
+          </div>
+          <a href="#" class="text-decoration-none">Forgot Password</a>
+        </div>
+
+        <button class="btn btn-danger w-100 text-white" type="submit" (click)="onLogin()">
+          Log In
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

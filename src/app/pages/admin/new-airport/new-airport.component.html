@@ -1,0 +1,50 @@
+<div class="col-md-12">
+  <div class="d-flex mb-2">
+    <div class="d-flex justify-content-start">
+      <h5 class="mb-0 headers">New Airport</h5>
+    </div>
+    <div class="buttonBox ms-auto">
+      <button type="submit" class="btn-primary formButton mr-2" (click)="OnListAirport()"
+      title="Shortcut Key :- Alt + a"><i class="fa fa-file-text mr-2" aria-hidden="true"></i> List</button>
+      <button type="submit" class="btn-primary formButton mr-2" (click)="OnSaveAirport()"
+        title="Shortcut Key :- Alt + a"><i class="fa fa-file-text mr-2" aria-hidden="true"></i> Save</button>
+      <button type="submit" class="btn-primary formButton mr-2" (click)="resetAirport()"
+        title="Shortcut Key :- Alt + a"><i class="fa fa-recycle mr-2" aria-hidden="true"></i> Reset</button>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid ">
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-12 col-md-4 col-lg-4">
+          <div class="mb-2">
+            <label>Airport Code</label>
+            <div>
+              <input type="text" class="form-control" [(ngModel)]="airportObj.airportCode" placeholder="Enter Airport Code..">
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4">
+          <div class="mb-2">
+            <label>Airport Name</label>
+            <div>
+              <input type="text" class="form-control"[(ngModel)]="airportObj.airportName"  placeholder="Select Airport Name.">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4 col-lg-4">
+          <div class="mb-2">
+            <label>City Name</label>
+            <div>
+              <input type="text" class="form-control" [(ngModel)]="airportObj.cityName" placeholder="Enter City Name">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

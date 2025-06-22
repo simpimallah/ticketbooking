@@ -1,0 +1,93 @@
+<div class="col-md-12">
+  <div class="d-flex mb-2">
+    <div class="d-flex justify-content-start">
+      <h5 class="mb-0 headers">New Flights</h5>
+    </div>
+    <div class="buttonBox ms-auto">
+      <button type="submit" class="btn-primary formButton mr-2" (click)="OnListFlight()"
+      title="Shortcut Key :- Alt + a"><i class="fa fa-file-text mr-2" aria-hidden="true"></i> List</button>
+      <button type="submit" class="btn-primary formButton mr-2" (click)="OnSaveFlight()"
+        title="Shortcut Key :- Alt + a"><i class="fa fa-file-text mr-2" aria-hidden="true"></i> Save</button>
+      <button type="submit" class="btn-primary formButton mr-2" (click)="resetFlight()"
+        title="Shortcut Key :- Alt + a"><i class="fa fa-recycle mr-2" aria-hidden="true"></i> Reset</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid ">
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-12 col-md-3 col-lg-3">
+          <div class="mb-2">
+            <label>Flight No.</label>
+            <div>
+              <input type="text" class="form-control" [(ngModel)]="flightObj.flightNumber" >
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">
+          <div class="mb-2">
+            <label>Scheduled Date</label>
+            <div>
+              <input type="date" class="form-control"[(ngModel)]="flightObj.travelDate" >
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">
+          <div class="mb-2">
+            <label>Departure Time</label>
+            <div>
+              <input type="time" class="form-control" [(ngModel)]="flightObj.departureTime" >
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">
+          <div class="mb-2">
+            <label>Arrival Time</label>
+            <div>
+              <input type="time" class="form-control" [(ngModel)]="flightObj.arrivalTime" >
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">
+          <div class="mb-2">
+            <label>Select Departure Airport</label>
+            <div>
+              <select  class="form-control" [(ngModel)]="flightObj.departureAirportId">
+                <option *ngFor="let item of airportList;" [value]="item.airportId">{{item.airportName}}, {{item.cityName}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">
+          <div class="mb-2">
+            <label>Select Arrival Airport</label>
+            <div>
+              <select  class="form-control" [(ngModel)]="flightObj.arrivalAirportId">
+                <option *ngFor="let item of airportList;" [value]="item.airportId">{{item.airportName}}, {{item.cityName}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">
+          <div class="mb-2">
+            <label>Total Seats</label>
+            <div>
+              <input type="text" class="form-control" [(ngModel)]="flightObj.totalSeats" >
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">
+          <div class="mb-2">
+            <label>Ticket Price</label>
+            <div>
+              <input type="text" class="form-control" [(ngModel)]="flightObj.price" >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
